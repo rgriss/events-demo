@@ -14,7 +14,7 @@ class EventUserTableSeeder extends Seeder
     public function run()
     {
         //
-        $users = User::all();git
+        $users = User::all();
         $events = Event::all();
 
         $firstUser = User::first();
