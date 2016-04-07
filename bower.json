@@ -1,0 +1,23 @@
+{
+  "name": "event-demo",
+  "private": "true",
+  "version": "0.1.1",
+  "authors": [
+    "Ryan Grissinger <ryan.grissinger@gmail.com>"
+  ],
+  "description": "a demo regarding events",
+  "license": "MIT",
+  "homepage": "event-demo.xyz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  }
+}

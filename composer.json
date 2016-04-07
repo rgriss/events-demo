@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "rgrissinger/lc-events",
+    "description": "A php demo",
+    "keywords": ["demo", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
