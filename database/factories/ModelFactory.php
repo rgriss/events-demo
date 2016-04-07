@@ -28,6 +28,6 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
     $eventTypes = ['Orientation Meeting', 'Trade Show', 'Concert', 'Golf Outing', 'Conference','Opening Ceremony','Product Launch', 'Party','Trade Fair','Retreat','Wedding','Reception','Anniversary Party','Seminar'];
     return [
         'title' => $faker->domainWord.' '.$eventTypes[array_rand($eventTypes)],
-        'date' => $faker->dateTimeBetween('-2 years','+2 years'),
+        'date' => $faker->dateTimeBetween('-2 years','+2 years')->format('Y-m-d'),
     ];
 });
