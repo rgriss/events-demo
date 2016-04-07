@@ -5,6 +5,5 @@
     <p>These are the terms you agree to:</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eligendi eos ex ipsa mollitia numquam quos similique vitae voluptate voluptatum?</p>
 
-
-    <a href="{{URL::previous()}}"><- Go Back</a>
+    <a class="btn btn-default" href="{{URL::previous()}}">Go Back</a>
 @endsection

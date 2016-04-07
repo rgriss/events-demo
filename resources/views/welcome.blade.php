@@ -42,11 +42,14 @@
                 font-size: 60px;
             }
         </style>
+
+        <link rel="stylesheet" href="/css/app.css">
+
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">The Event System</div>
+                <div class="title">The Event System Demo</div>
 
                 <h2>Task</h2>
                 <p>Create a simple web form using PHP that allows a user to sign up for an event.</p>
@@ -78,7 +81,9 @@
                     <li>An export of the database structure and data.</li>
                 </ul>
 
-                <a href="event">See the Solution</a>
+                <div class="text-center">
+                    <a class="btn btn-lg btn-primary" href="event">See the Solution</a>
+                </div>
             </div>
         </div>
     </body>

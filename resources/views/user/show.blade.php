@@ -2,13 +2,18 @@
 
 @section('content')
 
-    <h1>{{$user->first_name}} {{$user->last_name}}</h1>
-    <h2>{{$user->email}}</h2>
+    <div class="page-header">
+        <h1>{{$user->first_name}} {{$user->last_name}}</h1>
+        <h2>email: <small>{{$user->email}}</small></h2>
+        @if($user->phone)
+            <h2>phone: <small>{{$user->phone}}</small></h2>
+        @endif
+    </div>
 
-    <h2>Future Events:</h2>
+    <h2>{{$user->first_name}}'s Future Events:</h2>
     @include('event.list',['events'=>$user->futureEvents()->get()])
 
-    <h2>Previous Events:</h2>
+    <h2>{{$user->first_name}}'s Previous Events:</h2>
     @include('event.list',['events'=>$user->previousEvents()->get()])
 
     {{--<h2>User Events:</h2>--}}
