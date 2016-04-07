@@ -11,19 +11,15 @@ use App\Attendee;
 
 class EventController extends Controller
 {
-    //
+    /**
+     * display a list of events
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function index(){
 
         $events = Event::orderBy('date','desc')->get();
         $users = User::all();
-
-        $email=session()->pull('email');
-
-        if($email){
-            $attendee = User::ByEmail($email)->first();
-            $attendeePrevious = $attendee->previousEvents();
-            $attendeeUpcoming = $attendee->upcomingEvents();
-        }
 
         $previous_events = Event::past()->get();
         $future_events = Event::future()->get();
@@ -31,17 +27,36 @@ class EventController extends Controller
         return view('event.index',compact('events','users','previous_events','future_events'));
     }
 
+    /**
+     * Show an individual event
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function show($id)
     {
         $event = Event::with('attendees')->findOrFail($id);
         $attendees = $event->attendees;
         return view('event.show',compact('event','attendees'));
     }
+
+    /**
+     * Show the signup form
+     *
+     * @param $id
+     * @return $this
+     */
     function getSignup($id){
         $event = Event::findOrFail($id);
         return view('event.sign-up-form')->with('event',$event);
     }
 
+    /**
+     * Process the signup form
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     function postSignup(Request $request){
         $event = Event::findOrFail($request['event_id']);
         if(!$event){
@@ -65,19 +80,25 @@ class EventController extends Controller
                 'last_name'=>$request['last_name'],
                 'email'=>$request['email'],
             ]);
+            session()->flash('alert-info','By the way, we created a new user for <strong>'.$user->first_name.'</strong>.  In the real world, we could implement some kind of email verification to be sure that the real owner of <strong>'.$user->email.'</strong> actually initiated or approved of this request.  But this is just a demo, for the time being, anyone can enter any email address.');
         }
 
         //at this point, we have a good user and a good event.
         //EITHER of these would work:
 
+        //why call detach first?  to avoid integrity issues.
+        $user->events()->detach($event->id);
         $user->events()->attach($event->id);
+
         //$event->attendees()->attach($user->id);
 
+        $words=['Terrific','Excellent','Congratulations','Stellar','Wonderful','Yay'];
+        $word=$words[array_rand($words)];
 
-        session()->flash('email',$request['email']);
-        session()->flash('success','Success!');
+        session()->flash('alert-success',$word.'! <strong>'.$user->first_name.'</strong> is signed up for <strong>'.$event->title.'</strong>.');
 
-        return redirect('event');
+        return redirect('user/'.$user->id);
+        //return redirect('event');
 
     }
 }
