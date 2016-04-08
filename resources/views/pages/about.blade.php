@@ -4,14 +4,13 @@
 
 @section('sidebar')
     @parent
-
     <p>This is appended to the master sidebar.</p>
 @endsection
 
 @section('content')
 
-    <h1>About this site <small>and installation instructions.</small></h1>
-    <p>This is a simple website built as a demo.  This page explains all the steps I took, but assuming your environment is similar to mine, and/or you are familiar/comfortable with Laravel, you can easily set the project up to run on your local machine with just a few commands:</p>
+    <h1>About this site</h1>
+    <p>This is a simple website built as a demonstration of php, mysql, and other related tools, concepts, and techniques.  Below, I will try to explain all the steps I took when building the site, but assuming your environment is similar to mine, and/or you are familiar/comfortable with Laravel, you can easily set the project up to run on your local machine with just a few commands:</p>
 
     <pre><code>
     git clone git@bitbucket.org:rgrissinger/lc-events.git

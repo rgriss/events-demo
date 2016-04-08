@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Event;
 
 class UserController extends Controller
 {
@@ -18,9 +19,11 @@ class UserController extends Controller
 
     function show($id)
     {
+        $all_future_events = Event::future()->get();
+
         $user = User::with('events')->findOrFail($id);
         $events = $user->events;
 
-        return view('user.show',compact('user','events'));
+        return view('user.show',compact('user','events','all_future_events'));
     }
 }

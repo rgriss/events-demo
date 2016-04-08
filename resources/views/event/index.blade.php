@@ -8,7 +8,7 @@
     <h2>Upcoming Events</h2>
     @include('event.list',['events'=>$future_events, 'show_signup_links'=>true])
 
-    <h2>Past Events</h2>
-    @include('event.list',['events'=>$previous_events])
+    {{--<h2>Past Events</h2>--}}
+{{--    @include('event.list',['events'=>$previous_events])--}}
 
 @endsection

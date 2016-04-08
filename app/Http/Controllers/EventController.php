@@ -80,7 +80,7 @@ class EventController extends Controller
                 'last_name'=>$request['last_name'],
                 'email'=>$request['email'],
             ]);
-            session()->flash('alert-info','By the way, we created a new user for <strong>'.$user->first_name.'</strong>.  In the real world, we could implement some kind of email verification to be sure that the real owner of <strong>'.$user->email.'</strong> actually initiated or approved of this request.  But this is just a demo, for the time being, anyone can enter any email address.');
+            session()->flash('alert-info','By the way, we created a new user for <strong>'.$user->first_name.'</strong>.  In the real world, we could implement some kind of email verification to be sure that the real owner of <strong>'.$user->email.'</strong> actually initiated or approved of this request.  But this is just a demo, so for the time being, anyone can enter any email address.');
         }
 
         //at this point, we have a good user and a good event.
@@ -92,7 +92,7 @@ class EventController extends Controller
 
         //$event->attendees()->attach($user->id);
 
-        $words=['Terrific','Excellent','Congratulations','Stellar','Wonderful','Yay'];
+        $words=['Terrific','Excellent','Congratulations','Stellar','Wonderful','Yay','Groovy'];
         $word=$words[array_rand($words)];
 
         session()->flash('alert-success',$word.'! <strong>'.$user->first_name.'</strong> is signed up for <strong>'.$event->title.'</strong>.');

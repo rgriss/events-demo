@@ -35,6 +35,10 @@
             height: 40px;
             background-color: #f5f5f5;
         }
+        .logo{
+            max-height: 50px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -44,15 +48,20 @@
 @section('nav')
 
         <!-- Static navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
+    <img class="logo pull-left" src="https://www2.lifestylecommunities.com/img/lc-logo.png" alt="LC">
+
     <div class="container-fluid">
+
         <div class="navbar-header">
+
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <a class="navbar-brand" href="/">Event Demo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -60,7 +69,6 @@
                 <li><a href="/event">Events</a></li>
                 <li><a href="/user">Users</a></li>
             </ul>
-
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>

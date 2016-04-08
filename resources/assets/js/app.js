@@ -1,3 +1,5 @@
-$(document).on('load',function(){
-    alert("HELLO");
+$(function(){
+    $(document).on('load',function(){
+        console.log("hello world");
+    });
 });

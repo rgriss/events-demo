@@ -4,7 +4,7 @@
     <div class="content">
         <h1 class="title">The Event System Demo</h1>
 
-        <h2>Task</h2>
+        <h2>Task:</h2>
         <p>Create a simple web form using PHP that allows a user to sign up for an event.</p>
         <ul>
             <li>The form should include fields for:
@@ -24,10 +24,10 @@
             <li>The event lists should include the event name and date, both pulled from the database.</li>
         </ul>
 
-        <h2>Notes</h2>
+        <h2>Notes:</h2>
         <p>Database integrity and security are important. There also should not be any PHP errors, warnings, or notices. The page should exhibit basic responsive behavior.</p>
 
-        <h2>Include</h2>
+        <h2>Include:</h2>
         <ul>
             <li>All Code.</li>
             <li>Any special information needed for displaying the page.</li>
@@ -35,7 +35,8 @@
         </ul>
 
         <div class="text-center">
-            <a class="btn btn-lg btn-primary" href="event">See the Solution</a>
+            <?php $event = App\Event::future()->first() ?>
+            <a class="btn btn-lg btn-primary" href="event/{{$event->id}}/register">See the Solution</a>
         </div>
     </div>
 

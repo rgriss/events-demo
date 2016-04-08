@@ -9,6 +9,7 @@
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5759,27 +5760,42 @@ ul.event-list, ul.user-list {
     margin-bottom: 5px; }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; }
+
+.navbar {
+  border-radius: 0; }
+
+.form-page-container {
+  padding: 15px;
+  background: #000000 url(https://www1.lifestylecommunities.com/img/bg-noise-black.png) repeat;
+  color: #fff; }
+
+.form-control {
+  background: #767676;
+  border-radius: 0;
+  color: #fff; }
+
+.page-header {
+  margin-top: 0; }
 
 .event-date {
   font-family: 'Comfortaa', cursive; }
 
 .event-title {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 60px;
-  font-weight: 600;
-  font-style: italic; }
+  font-weight: 600; }
 
 .event-list-row {
-  background-color: lightgrey;
-  text-align: center;
   padding: 3px;
-  border: solid white 5px; }
+  border: solid white 5px;
+  border-top: solid black 2px; }
   .event-list-row .event-title {
     font-size: 24px;
     text-transform: uppercase; }
   .event-list-row .event-date {
-    text-align: center;
     font-size: 24px; }
 
 /*# sourceMappingURL=app.css.map */

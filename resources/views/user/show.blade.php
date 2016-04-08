@@ -13,10 +13,10 @@
     </div>
 
     <h2>{{$user->first_name}}'s Upcoming Events:</h2>
-    @include('event.list',['events'=>$user->futureEvents()->get()])
+    @include('event.list',['events'=>$user->futureEvents])
 
     <h2>{{$user->first_name}}'s Previous Events:</h2>
-    @include('event.list',['events'=>$user->previousEvents()->get()])
+    @include('event.list',['events'=>$user->previousEvents])
 
     {{--<h2>User Events:</h2>--}}
 
@@ -29,5 +29,8 @@
         {{--@endforeach--}}
     {{--</ul>--}}
     {{--@endif--}}
+
+    <h2>All Upcoming Events:</h2>
+    @include('event.list',['events'=>$all_future_events,'show_signup_links'=>true])
 
 @endsection
