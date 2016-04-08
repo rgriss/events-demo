@@ -5,7 +5,7 @@
     @foreach($events as $event)
         <li>
             @if(@$show_signup_links)
-                <a class="btn btn-primary btn-xs" href="/event/{{$event->id}}/register">Sign Up</a>
+                <a class="btn btn-primary btn-lg" href="/event/{{$event->id}}/register">Sign Up</a>
             @endif
             <a href="/event/{{$event->id}}">{{$event->title}}</a> ({{$event->date->format('Y-m-d')}})
 
