@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="content">
-        <div class="title">The Event System Demo</div>
+        <h1 class="title">The Event System Demo</h1>
 
         <h2>Task</h2>
         <p>Create a simple web form using PHP that allows a user to sign up for an event.</p>
