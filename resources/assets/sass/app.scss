@@ -1,8 +1,39 @@
  @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
+ @import url(https://fonts.googleapis.com/css?family=Lobster+Two);
+ @import url(https://fonts.googleapis.com/css?family=Comfortaa);
+ @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+ @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic);
 ul.event-list, ul.user-list{
  list-style: none;
  li{
   margin-bottom: 5px;
+ }
+}
+
+ body{
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+ .event-date{
+  font-family: 'Comfortaa', cursive;
+ }
+ .event-title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  font-style: italic;
+ }
+.event-list-row{
+ background-color: lightgrey;
+ text-align: center;
+ padding: 3px;
+ border: solid white 5px;
+ .event-title{
+  font-size: 24px;
+  text-transform: uppercase;
+ }
+ .event-date{
+  text-align: center;
+  //font-family: 'Lobster Two', cursive;
+  font-size:24px;
  }
 }

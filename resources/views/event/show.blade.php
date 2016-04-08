@@ -3,10 +3,9 @@
 @section('content')
 
     <div class="page-header">
-        <h1>{{$event->title}}</h1>
-
-        <p>This event occurs on:</p>
-        <h2><small>{{$event->date->format('l, F jS, Y')}}</small></h2>
+        <h1 class="event-title">{{$event->title}}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores explicabo fuga maiores quaerat quo sit. Dignissimos dolorem fuga impedit non quos, ut voluptate! Accusamus delectus doloremque expedita itaque labore nam necessitatibus, quas recusandae. Ab accusamus consequatur consequuntur cumque deleniti doloremque, eos exercitationem, laboriosam laborum mollitia, necessitatibus nisi numquam omnis.</p>
+        <h2 class="event-date"><small>{{$event->date->format('l, F jS, Y')}}</small></h2>
     </div>
 
     <h3>Who's going?</h3>

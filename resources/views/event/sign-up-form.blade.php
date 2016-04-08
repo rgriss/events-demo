@@ -3,8 +3,8 @@
 @section('content')
     <div class="page-header">
         <p>You are signing up for:</p>
-        <h1>{{$event->title}}</h1>
-        <h2><small> on {{$event->date}}</small></h2>
+        <h1 class="event-title">{{$event->title}}</h1>
+        <h2 class="event-date"><small>{{$event->date->format('l, F jS, Y')}}</small></h2>
     </div>
 
 
@@ -42,8 +42,8 @@
             </div>
         </div>
 
-        <div class="col-sm-offset-1">
-            <div class="checkbox" style="margin-bottom: 15px">
+        <div class="">
+            <div class="checkbox" style="margin-bottom: 15px; text-align: center;">
                 <label>
                     <input type="checkbox" name="agree_to_terms"> I Agree to the <a href="/terms">Terms & Conditions</a>
                 </label>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-xs-offset-4 col-sm-offset-5 col-xs-6">
+            <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-lg">
                     <i class="fa fa-plus"></i> Sign Up
                 </button>

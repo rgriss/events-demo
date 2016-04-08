@@ -5,6 +5,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5753,5 +5757,29 @@ ul.event-list, ul.user-list {
   list-style: none; }
   ul.event-list li, ul.user-list li {
     margin-bottom: 5px; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.event-date {
+  font-family: 'Comfortaa', cursive; }
+
+.event-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  font-style: italic; }
+
+.event-list-row {
+  background-color: lightgrey;
+  text-align: center;
+  padding: 3px;
+  border: solid white 5px; }
+  .event-list-row .event-title {
+    font-size: 24px;
+    text-transform: uppercase; }
+  .event-list-row .event-date {
+    text-align: center;
+    font-size: 24px; }
 
 /*# sourceMappingURL=app.css.map */
