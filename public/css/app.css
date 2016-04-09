@@ -5780,19 +5780,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-inverse .navbar-toggle {
   border: solid 2px white;
-  border-radius: 0; }
+  border-radius: 0;
+  padding: 8px 10px; }
 
 .navbar-brand {
   padding-left: 0; }
   .navbar-brand img {
+    max-height: 50px;
+    margin-right: 10px;
     margin-top: -15px; }
 
-.btn {
-  border-radius: 0; }
-
-.logo {
-  max-height: 50px;
-  margin-right: 10px; }
+.page-header {
+  margin-top: 0; }
 
 .form-page-container {
   padding: 15px;
@@ -5804,8 +5803,9 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
   color: #fff; }
 
-.page-header {
-  margin-top: 0; }
+.required {
+  white-space: nowrap;
+  color: red; }
 
 ul.event-list, ul.user-list {
   list-style: none; }

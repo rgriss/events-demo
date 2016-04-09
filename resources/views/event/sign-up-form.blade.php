@@ -3,9 +3,7 @@
 @section('content')
 
     <style>
-        .required{
-            color:red;
-        }
+
     </style>
     <div class="form-page-container">
         <div class="page-header">
@@ -32,19 +30,19 @@
                     <input type="text" name="last_name" id="attendee-last-name" class="form-control" value="{{old('last_name')}}">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="phone" class="col-sm-3 col-sm-offset-1">Phone Number</label>
-                <div class="col-sm-6">
-                    <input type="text" name="phone" id="attendee-phone" class="form-control" value="{{old('phone')}}">
-                </div>
-            </div>
+
             <div class="form-group">
                 <label for="email" class="col-sm-3 col-sm-offset-1">Email Address <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                     <input type="email" name="email" id="attendee-email" class="form-control" value="{{old('email')}}">
                 </div>
             </div>
-
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 col-sm-offset-1">Phone Number</label>
+                <div class="col-sm-6">
+                    <input type="text" name="phone" id="attendee-phone" class="form-control" value="{{old('phone')}}">
+                </div>
+            </div>
             <div class="">
                 <div class="checkbox" style="margin-bottom: 15px; text-align: center;">
                     <label>
