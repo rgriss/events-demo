@@ -20,7 +20,7 @@
         <div class="right-col col-xs-4 col-sm-2 text-right">
             <div class="event-actions">
                 @if(@$show_signup_links)
-                    <a class="btn btn-primary" href="/event/{{$event->id}}/register">Sign Up</a>
+                    <a class="btn btn-primary" href="/event/{{$event->id}}/register"><i class="fa fa-plus"></i>  Sign Up</a>
                 @endif
             </div>
         </div>

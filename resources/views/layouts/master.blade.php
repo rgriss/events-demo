@@ -19,8 +19,6 @@
 </head>
 <body>
 
-
-
 @section('nav')
 
         <!-- Static navbar -->
@@ -70,10 +68,6 @@
 @show
 
 <script src="/js/app.js"></script>
-<script>
-    $(document).on('load',function(){
-        console.log("HELLO");
-    });
-</script>
+
 </body>
 </html>

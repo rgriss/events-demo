@@ -1,4 +1,5 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
@@ -54,8 +55,6 @@ h1,h2,h3,h4,h5,h6{
  margin-top:0;
 }
 
-
-
 .form-page-container{
  padding: 15px;
  background: #000000 url(https://www1.lifestylecommunities.com/img/bg-noise-black.png) repeat;
@@ -72,8 +71,6 @@ h1,h2,h3,h4,h5,h6{
  white-space: nowrap;
  color:red;
 }
-
-
 
 ul.event-list, ul.user-list{
  list-style: none;

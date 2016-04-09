@@ -11,6 +11,10 @@
 |
 */
 
+/**
+ * Create a fake User
+ */
+
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'first_name'=>$faker->firstName,
@@ -22,7 +26,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-
+/**
+ * Create a fake event
+ */
 
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
     $eventTypes = ['Orientation Meeting', 'Trade Show', 'Concert', 'Golf Outing', 'Conference','Opening Ceremony','Product Launch', 'Party','Trade Fair','Retreat','Wedding','Reception','Anniversary Party','Seminar'];

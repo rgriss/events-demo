@@ -13,7 +13,7 @@ class EventUserTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //prepare our models
         $users = User::all();
         $events = Event::all();
 
