@@ -16,30 +16,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        /* Sticky footer styles
-        -------------------------------------------------- */
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-        body {
-            /* Margin bottom by footer height */
-            margin-bottom: 40px;
-        }
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            /* Set the fixed height of the footer here */
-            height: 40px;
-            background-color: #f5f5f5;
-        }
-        .logo{
-            max-height: 50px;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 <body>
 
@@ -49,7 +25,6 @@
 
         <!-- Static navbar -->
 <nav class="navbar navbar-inverse">
-    <img class="logo pull-left" src="https://www2.lifestylecommunities.com/img/lc-logo.png" alt="LC">
 
     <div class="container-fluid">
 
@@ -62,7 +37,8 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="/">Event Demo</a>
+            <a class="navbar-brand" href="/">
+                <img class="logo pull-left" src="https://www2.lifestylecommunities.com/img/lc-logo.png" alt="LC">Event Demo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

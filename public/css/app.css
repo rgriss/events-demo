@@ -5,9 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(https://fonts.googleapis.com/css?family=Lobster+Two);
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
@@ -5754,19 +5752,47 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-ul.event-list, ul.user-list {
-  list-style: none; }
-  ul.event-list li, ul.user-list li {
-    margin-bottom: 5px; }
+html {
+  position: relative;
+  min-height: 100%; }
 
 body {
+  font-family: 'Montserrat', sans-serif;
+  /* Set Margin bottom equal to footer height */
+  margin-bottom: 40px; }
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif; }
 
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif; }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed footer height equal to body:margin-bottom */
+  height: 40px;
+  background-color: #f5f5f5; }
+
+.navbar, .btn, .well, .alert {
+  border-radius: 0; }
 
 .navbar {
+  border: 0; }
+
+.navbar-inverse .navbar-toggle {
+  border: solid 2px white;
   border-radius: 0; }
+
+.navbar-brand {
+  padding-left: 0; }
+  .navbar-brand img {
+    margin-top: -15px; }
+
+.btn {
+  border-radius: 0; }
+
+.logo {
+  max-height: 50px;
+  margin-right: 10px; }
 
 .form-page-container {
   padding: 15px;
@@ -5781,6 +5807,11 @@ h1, h2, h3 {
 .page-header {
   margin-top: 0; }
 
+ul.event-list, ul.user-list {
+  list-style: none; }
+  ul.event-list li, ul.user-list li {
+    margin-bottom: 5px; }
+
 .event-date {
   font-family: 'Comfortaa', cursive; }
 
@@ -5790,12 +5821,20 @@ h1, h2, h3 {
 
 .event-list-row {
   padding: 3px;
-  border: solid white 5px;
+  border: none;
   border-top: solid black 2px; }
   .event-list-row .event-title {
     font-size: 24px;
     text-transform: uppercase; }
+  .event-list-row .right-col {
+    display: table-cell;
+    vertical-align: middle; }
   .event-list-row .event-date {
     font-size: 24px; }
+
+.event-list-row:hover {
+  background-color: #000011; }
+  .event-list-row:hover .event-date {
+    color: #fff; }
 
 /*# sourceMappingURL=app.css.map */

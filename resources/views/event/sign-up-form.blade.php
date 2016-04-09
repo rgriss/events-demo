@@ -20,14 +20,14 @@
             <input type="hidden" name="event_id" value="{{$event->id}}">
 
             <div class="form-group">
-                <label for="first_name" class="col-sm-3 col-sm-offset-1"><span class="required">&lowast;</span> First Name</label>
+                <label for="first_name" class="col-sm-3 col-sm-offset-1">First Name <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                      <input type="text" name="first_name" id="attendee-first-name" class="form-control" value="{{old('first_name')}}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="last_name" class="col-sm-3 col-sm-offset-1"><span class="required">&lowast;</span> Last Name</label>
+                <label for="last_name" class="col-sm-3 col-sm-offset-1">Last Name <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                     <input type="text" name="last_name" id="attendee-last-name" class="form-control" value="{{old('last_name')}}">
                 </div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-3 col-sm-offset-1"><span class="required">&lowast;</span> Email Address</label>
+                <label for="email" class="col-sm-3 col-sm-offset-1">Email Address <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                     <input type="email" name="email" id="attendee-email" class="form-control" value="{{old('email')}}">
                 </div>
