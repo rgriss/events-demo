@@ -50,7 +50,7 @@
             </div>
 
             <div class="panel-body">
-                <p>Here is the <strong>next</strong> event in the database.  Click the button to sign up.</p>
+                <p>Here is the <strong>next</strong>, upcoming event in the database.  Click the button to see the sign up form for this event.</p>
                 <?php $event = App\Event::future()->first() ?>
                 <h3 class="text-center">{{$event->title}}</h3>
                 <h4 class="text-center">{{$event->date->format('n/j/y')}}</h4>

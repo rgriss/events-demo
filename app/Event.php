@@ -16,7 +16,7 @@ class Event extends Model
 
     public function scopeFuture($query)
     {
-        return $query->orderBy('date','asc')->where('date','>',date('Y-m-d'));
+        return $query->orderBy('date','asc')->where('date','>=',date('Y-m-d'));
     }
 
     public function scopePast($query)
