@@ -55,7 +55,7 @@
                 <h3 class="text-center">{{$event->title}}</h3>
                 <h4 class="text-center">{{$event->date->format('n/j/y')}}</h4>
                 <p class="text-center">
-                    <a class="btn btn-lg btn-primary" href="event/{{$event->id}}/register"><i class="fa fa-plus"></i> Sign Up</a>
+                    <a class="btn btn-lg btn-primary" href="/event/{{$event->id}}/register"><i class="fa fa-plus"></i> Sign Up</a>
                 </p>
             </div>
 

@@ -17,6 +17,13 @@ Route::resource('user','UserController');
 Route::get('event/{id}/register','EventController@getSignup');
 Route::post('event/{id}/register','EventController@postSignup');
 
+
+view()->composer(['layouts.master','pages.docs'],function($view)
+{
+    $next_event = App\Event::future()->first();
+    $view->with('next_event',$next_event);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,6 +31,11 @@ Route::get('/', function () {
 Route::get('/about',function(){
     return view('pages/about');
 });
+
+Route::get('/docs',function(){
+    return view('pages/docs');
+});
+
 Route::get('/terms',function(){
     return view('pages/terms');
 });

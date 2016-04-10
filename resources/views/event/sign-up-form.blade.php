@@ -3,7 +3,13 @@
 @section('content')
 
     <style>
-
+        body{
+            min-height: 100%;
+            background: #000000 url(https://www1.lifestylecommunities.com/img/bg-noise-black.png) repeat !important;
+        }
+        .container{
+            padding:0;
+        }
     </style>
     <div class="form-page-container">
         <div class="page-header">
@@ -18,27 +24,27 @@
             <input type="hidden" name="event_id" value="{{$event->id}}">
 
             <div class="form-group">
-                <label for="first_name" class="col-sm-3 col-sm-offset-1">First Name <span class="required">&lowast; required</span></label>
+                <label for="first_name" class="col-sm-4 col-sm-offset-1">First Name <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                      <input type="text" name="first_name" id="attendee-first-name" class="form-control" value="{{old('first_name')}}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="last_name" class="col-sm-3 col-sm-offset-1">Last Name <span class="required">&lowast; required</span></label>
+                <label for="last_name" class="col-sm-4 col-sm-offset-1">Last Name <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                     <input type="text" name="last_name" id="attendee-last-name" class="form-control" value="{{old('last_name')}}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="email" class="col-sm-3 col-sm-offset-1">Email Address <span class="required">&lowast; required</span></label>
+                <label for="email" class="col-sm-4 col-sm-offset-1">Email Address <span class="required">&lowast; required</span></label>
                 <div class="col-sm-6">
                     <input type="email" name="email" id="attendee-email" class="form-control" value="{{old('email')}}">
                 </div>
             </div>
             <div class="form-group">
-                <label for="phone" class="col-sm-3 col-sm-offset-1">Phone Number</label>
+                <label for="phone" class="col-sm-4 col-sm-offset-1">Phone Number</label>
                 <div class="col-sm-6">
                     <input type="text" name="phone" id="attendee-phone" class="form-control" value="{{old('phone')}}">
                 </div>

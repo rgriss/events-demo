@@ -5776,7 +5776,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0; }
 
 .navbar {
-  border: 0; }
+  border: 0;
+  margin-bottom: 0; }
+
+.navbar-static-top {
+  margin: 0; }
+
+@media (min-width: 769px) {
+  .app-errors {
+    margin-top: 20px; } }
 
 .navbar-inverse .navbar-toggle {
   border: solid 2px white;
@@ -5795,7 +5803,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-page-container {
   padding: 15px;
-  background: #000000 url(https://www1.lifestylecommunities.com/img/bg-noise-black.png) repeat;
   color: #fff; }
 
 .form-control {
