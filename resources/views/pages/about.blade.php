@@ -66,7 +66,7 @@
         <li>gulp</li>
         <li>A webserver (apache or nginx)</li>
     </ul>
-    <h3><small>*recommended, but not required:</small></h3>
+    <h3><small>recommended, but not required:</small></h3>
     <ul>
         <li>Vagrant</li>
         <li>Virtualbox</li>
@@ -162,7 +162,7 @@ EOT;
 ?>
     <pre><code>{{$eot}}</code></pre>
 
-    <p>This is leveraging the fantastic <a href="https://github.com/fzaninotto/Faker">fzaninotto/Faker</a> package.</p>
+    <p>Read more about the fantastic <a href="https://github.com/fzaninotto/Faker">fzaninotto/Faker</a> package.</p>
 
     <h4>Code Example 2:</h4>
     <p>This code is from <code>database/seeds/EventUserTableSeeder.php</code></p>
