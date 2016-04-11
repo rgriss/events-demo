@@ -43,21 +43,20 @@
         <li>
             <p>Clone the project with this command:</p>
     <pre><code>
-            git clone https://rgrissinger@bitbucket.org/rgrissinger/lc-events.git
+    git clone https://rgrissinger@bitbucket.org/rgrissinger/lc-events.git
         </code></pre>
         </li>
         <li>Set up a new mysql database called <strong>lcevents</strong> (for example).</li>
         <li>Configure your webserver & hosts file to serve the <code>~/Code/lc-events/public</code> directory as <code>local.events.com</code> (for example).</li>
         <li>Set up your <code>.env</code> file.  For example, run this from the project root:
 <pre><code>
-        cp .env.example .env
-
+    cp .env.example .env
     </code></pre>
             <p>Now Edit your .env appropriately - for example:</p>
     <pre><code>
-            DB_DATABASE=lcevents
-            DB_USERNAME=homestead
-            DB_PASSWORD=secret
+    DB_DATABASE=lcevents
+    DB_USERNAME=homestead
+    DB_PASSWORD=secret
         </code></pre>
             <p>There are other settings available here, but the DB settings are all you need for now.</p>
         </li>
@@ -65,12 +64,12 @@
         <li>
             <p>You're almost done.  Now run the following commands from the project root:</p>
     <pre><code>
-            composer update
-            php artisan key:generate
-            npm install
-            bower install
-            gulp
-            php artisan migrate --seed
+    composer update
+    php artisan key:generate
+    npm install
+    bower install
+    gulp
+    php artisan migrate --seed
         </code></pre>
         </li>
     </ol>
@@ -79,27 +78,27 @@
     <h3 id="homestead">Laravel Homestead Users</h3>
     <p>If you are using Laravel Homestead, just add the site and database to your <code>~/.homestead/Homestead.yaml</code> file like this:</p>
     <pre><code>
-            sites:
-            - map: local.events.com
-            to: /home/vagrant/Code/lc-events/public
+    sites:
+        - map: local.events.com
+        to: /home/vagrant/Code/lc-events/public
 
-            databases:
-            - lcevents
+    databases:
+        - lcevents
         </code></pre>
     <p>Run <code>Homestead up --provision</code> or similar.</p>
     <p>Finally, add something like this to your /etc/hosts :</p>
     <pre><code>
-            192.168.10.10   local.events.com
+    192.168.10.10   local.events.com
         </code></pre>
 
     <p>Once the environment is set up, run these from the project root:</p>
     <pre><code>
-            composer update
-            php artisan key:generate
-            npm install
-            bower install
-            gulp
-            php artisan migrate --seed
+    composer update
+    php artisan key:generate
+    npm install
+    bower install
+    gulp
+    php artisan migrate --seed
         </code></pre>
 
     <h2>About the Database, Migrations, and Test Data</h2>
@@ -114,25 +113,25 @@
     <p class="alert alert-info">There are a few other tables, too, but they are beyond the scope of this text.</p>
 
     <h3>Database Integrity</h3>
-    <p>The <code>event_user</code> table (again. note the naming convention: lowercase, singular nouns, and that the first noun, 'event', is alphabetically before 'user') holds the many-to-many relationship between the <code>User</code> and <code>Event</code> models.</p>
+    <p>The <code>event_user</code> table holds the many-to-many relationship between the <code>User</code> and <code>Event</code> models. (Again, note the naming convention: lowercase, singular nouns, separated by an underscore, and first noun, 'event', is alphabetically before 'user').</p>
     <p>The <code>create_event_user_table</code> migration sets the table structure up properly:</p>
     <pre><code>public function up()
-            {
-            Schema::create('event_user', function (Blueprint $table) {
+{
+    Schema::create('event_user', function (Blueprint $table) {
 
-            $table->integer('event_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+        $table->integer('event_id')->unsigned();
+        $table->integer('user_id')->unsigned();
 
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('user_id')->references('id')->on('users')
+        ->onUpdate('cascade')->onDelete('cascade');
 
-            $table->foreign('event_id')->references('id')->on('events')
-            ->onUpdate('cascade')->onDelete('cascade');
+        $table->foreign('event_id')->references('id')->on('events')
+        ->onUpdate('cascade')->onDelete('cascade');
 
-            $table->primary(['user_id', 'event_id']);
+        $table->primary(['user_id', 'event_id']);
 
-            });
-            }</code></pre>
+    });
+}</code></pre>
     <p>Even though there are essentially only 5 lines of code in the middle of this function, there are quite a few things are going on here:</p>
     <ul>
         <li>In short: with few exceptions, every row in a database for objects like <code>Event</code> and <code>User</code> should have a <strong>unique, primary key</strong>, and the columns for <code>event.id</code>, <code>user.id</code>, and thus <code>event_user.event_id</code> and <code>event_user.user_id</code> should all be most correctly <strong>unsigned integers</strong>.  I've worked on projects without <strong>any</strong> primary keys on similar tables, or keys that are varchars... both problematic situations.  I've heard the argument in the past that, "It doesn't matter, because is highly unlikely that a negative number would ever be passed into this table."  But I say, why not take a moment to do it the right way?  In this code, the simple call to <code>->unsigned()</code> guarantees that the column can only contain a positive number.  If we ever need to deal with an advanced joins and/or millions of rows, we will not encounter the performance/indexing problems or mysteriously "disappearing" data that can arise with improper or missing keys.</li>
@@ -140,7 +139,7 @@
         <li>The calls to <code>->onUpdate('cascade')</code> and <code>->onDelete('cascade')</code> guarantee that when a <code>User</code> or <code>Event</code> model are updated or deleted, so too will the associated rows in this table.  For example, if Event #123 is deleted, we will never have an error in client code trying to look up a row like (123,1) in this table (such a row would also have been deleted when Event #123 was deleted).</li>
         <li>The table has a <strong>composite primary key</strong> which guarantees that only one row like (1,1) can exist.</li>
     </ul>
-    <p>Regarding that last one: let's consider this (abridged) code in the Event Controller, <code>app/Http/Controllers/EventController.php</code>:</p>
+    <p>Regarding that last one: let's consider this (abridged) code from the Event Controller, <code>app/Http/Controllers/EventController.php</code>:</p>
 
     <?php
     $eot=<<<'EOT'
@@ -319,40 +318,40 @@ EOT;
     <pre><code>SELECT * FROM events WHERE date >= '2016-04-01'</code></pre>
     <p>Here's another example: the <code>User</code> model <em>indirectly</em> uses this same function when we ask for <code>$user->futureEvents();</code>.  This following code lives in <code>app/User.php</code>:</p>
     <pre><code>public function events()
-            {
-            return $this->belongsToMany('App\Event');
-            }
+{
+    return $this->belongsToMany('App\Event');
+}
 
-            public function futureEvents()
-            {
-            return $this->events()->future();
-            }</code></pre>
+public function futureEvents()
+{
+    return $this->events()->future();
+}</code></pre>
 
     <p>It's so simple... so elegant... so self-explanatory.  But I'll try to explain here anyway.  The <code>User</code> model looks to it's related <code>Event</code> model via the <code>belongsToMany</code> relationship, and asks the Event for it's future events... so the SQL that runs might look something like this:</p>
 
-    <pre><code>
-            SELECT events.*, users.* FROM event_user
-            JOIN users on event_user.user_id = users.id
-            JOIN events on event_user.event_id = events.id
-            WHERE user_id = 1
-            AND events.date >= '2016-04-01'
-        </code></pre>
+<pre><code>
+    SELECT events.*, users.* FROM event_user
+    JOIN users on event_user.user_id = users.id
+    JOIN events on event_user.event_id = events.id
+    WHERE user_id = 1
+    AND events.date >= '2016-04-01'
+</code></pre>
     <h2><span class="label label-success">BONUS!</span> Performance</h2>
     <h3>Eager Loading of related models</h3>
     <p>Let's bring this home with one more example, building on what we have so far.  Let's say we wanted a list of users WITH their future events...</p>
     <p>Consider this code:</p>
     <pre><code>$users = User::all();
-            foreach($users as $user){
-            $user->futureEvents()->get();
-            }</code></pre>
+    foreach($users as $user){
+        $user->futureEvents()->get();
+    }</code></pre>
     <p>If you had 100 users, that code would run 100 queries, right? (Actually, 101).</p>
     <p>Well, here is a much more efficient way of doing it:</p>
     <pre><code>$users = User::with('futureEvents')->get();
-            foreach($users as $user){
-            $events = $user->futureEvents;
-            //do something with the events
-            }
-        </code></pre>
+    foreach($users as $user){
+        $events = $user->futureEvents;
+        //do something with the events
+    }
+</code></pre>
     <p>Our system only ran TWO queries. The results would include 100 users like this:</p>
     <?php
     $eot=<<<'EOT'
@@ -386,9 +385,9 @@ EOT;
     <p>On the one hand, this is great because we only have 2 querys vs. 101... however, there may be a downside, depending on the use case.  This approach makes our response much larger, which may not be good if we are dealing with a lot of records.  Or consider multiple and/or deeply nested relational data, if we pulled 1000 users with 100 events each... or consider what would happen if the events table had a bunch more data, i dunno, maybe pictures, or long descriptions or something.  That could be a lot of wasted bandwidth and processing power.</p>
     <p>If all we wanted was a count, we could just do something like this:</p>
 
-    <pre><code>$user = App\User::with(['futureEvents'=>function($query){
-            $query->select('id');
-            }])->get();</code></pre>
+<pre><code>$user = App\User::with(['futureEvents'=>function($query){
+    $query->select('id');
+}])->get();</code></pre>
 
     <p>This code says, "give me all the User info, but only the futureEvent's id's."</p>
     <p>Now our response looks like this:</p>
@@ -419,7 +418,7 @@ EOT;
     <pre><code>{{$eot}}</code></pre>
     <p>Note the nested <code>event</code> data ONLY contains an <code>id</code>, rather than a 'full' object.</p>
     <h2>Conclusion</h2>
-    <p>Obviously, we could manually write something like that in raw SQL, but in my opinion, this is a good example of the ORM doing a great deal of work for us, and producing code that not only gets the job done, but is very easy to read, maintain, and extend later.</p>
+    <p>Obviously, we could manually write something like that in raw SQL, but in my opinion, this is a good example of the ORM doing a great deal of work for us, and producing code that not only gets the job done quickly, but is very easy to read, maintain, and extend later.</p>
     <p>I have more to say about Security, Design, Project Management, Requirements Analysis, and more... perhaps I will have a chance to add to this page one day, but I hope you can tell that I put some effort into it.</p>
     <p>Just in case, here's a  button leading to the solution: <a class="btn btn-lg btn-primary" href="/event/{{$next_event->id}}/register"><i class="fa fa-plus"></i> Sign Up for the next Event</a></p>
     <p>Thank you again for your time and consideration!</p>

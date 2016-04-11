@@ -14,7 +14,7 @@
     <div class="well">
         <p>To whom it may concern:</p>
         <p>This is a simple "event registration" website, built in my spare time over a few days, in early April 2016, as part of a job application process.  It's meant to demonstrate php, mysql, and other related skills, tools, concepts, and techniques.</p>
-        <p>The core requirement was to <strong>"build a form that allows users to register for events"</strong>, but hopefully it's apparent that I tried to go above and beyond in many ways.  I put a good deal of extra effort into the front-end details, treating it as a complete "potentially shippable product", not "just a web form".</p>
+        <p>The core requirement was to <strong>"build a form that allows users to register for events"</strong>, but hopefully it's apparent that I tried to go above and beyond in many ways.  I put a good deal of extra effort into the front-end details, (and the 'documentation'), treating it as a complete "potentially shippable product", not "just a web form".</p>
         <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#goals" aria-expanded="false" aria-controls="goals">Read more about the project goals
             </button></p>
         <div id="goals" class="collapse">

@@ -59,8 +59,8 @@
 @section('footer')
 <footer class="footer">
     <nav class="navbar navbar-default navbar-bottom">
-        <div class="container">
-            <ul class="nav navbar-nav navbar-left">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
                 <li><a href="/terms">terms & conditions</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
