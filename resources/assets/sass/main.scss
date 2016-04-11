@@ -46,7 +46,6 @@ h1,h2,h3,h4,h5,h6{
  }
 }
 
-
 .navbar-inverse .navbar-toggle{
  border: solid 2px white;
  border-radius:0;
@@ -96,10 +95,9 @@ ul.event-list, ul.user-list{
 
 .event-title{
  font-family: 'Josefin Sans', sans-serif;
- //font-size: 36px;
  font-weight: 600;
- //font-style: italic;
 }
+
 .event-list-row{
  padding: 3px;
  border: none;
@@ -119,6 +117,7 @@ ul.event-list, ul.user-list{
  }
 
 }
+
 .event-list-row:hover{
  background-color: #000011;
  .event-date{

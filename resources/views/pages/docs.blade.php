@@ -10,34 +10,44 @@
 @section('content')
 
     <div class="page-header">
-        <h1>Code / Local Installation</h1>
+        <h1>Developer Documentation</h1>
         <p class="visible-xs-block alert alert-warning app-errors"><strong>Heads up!</strong> <i class="fa fa-code"></i> Code samples on this page are best viewed on larger screens.</p>
+        <p>This page contains installation instructions, code samples, and some thoughts on various aspects of application design.  Please note: The content of this page is technical in nature and was written for the use of developers.</p>
+        <p>If you need any help, or have any questions or comments, please contact <a href="mailto:ryan.grissinger@gmail.com">ryan.grissinger@gmail.com</a> at your convenience.</p>
+        <p>Thank you!</p>
 
     </div>
+<section id="demo">
+    <h2>Demo Website</h2>
     <div class="alert alert-info">
         <p>For ease of use (and extra credit), I deployed a 'production' version of the site:</p>
         <p class="text-center"><a class="btn btn-default" href="http://event-demo.xyz/" target="_blank"><i class="fa fa-external-link"></i> http://event-demo.xyz</a></p>
         <p>Please ask me if you'd to hear more about how I went about that, and/or for more info on any individual pieces of the stack I used to make that happen.</p>
     </div>
-    <h2>Prerequisites</h2>
-    <p>The project was developed on a linux system, but the following instructions should generally apply to mac/windows as well.  From this point forward, we'll assume you are familiar with the following tools (and other basics of your own system), but if you need any help, please feel free to ask.</p>
-    <p>If you are recreating this project on your local machine, make sure your machine has following basic set of tools installed:</p>
-    <h3><small>required</small></h3>
-    <ul>
-        <li>php 5.6+</li>
-        <li>mysql</li>
-        <li>node / npm</li>
-        <li>bower</li>
-        <li>gulp</li>
-        <li>A webserver (apache or nginx)</li>
-    </ul>
-    <h3><small>recommended, but not required:</small></h3>
-    <ul>
-        <li>Vagrant</li>
-        <li>Virtualbox</li>
-        <li><a href="#homestead">Laravel Homestead</a></li>
-    </ul>
+</section>
 
+<section id="prerequisites">
+        <h2>Prerequisites</h2>
+        <p>The project was developed on a linux system, but the following instructions should generally apply to mac/windows as well.  From this point forward, we'll assume you are familiar with the following tools (and other basics of your own system), but if you need any help, please feel free to ask.</p>
+        <p>If you are recreating this project on your local machine, make sure your machine has following basic set of tools installed:</p>
+        <h3><small>required</small></h3>
+        <ul>
+            <li>php 5.6+</li>
+            <li>mysql</li>
+            <li>node / npm</li>
+            <li>bower</li>
+            <li>gulp</li>
+            <li>A webserver (apache or nginx)</li>
+        </ul>
+        <h3><small>recommended, but not required:</small></h3>
+        <ul>
+            <li>Vagrant</li>
+            <li>Virtualbox</li>
+            <li><a href="#homestead">Laravel Homestead</a></li>
+        </ul>
+    </section>
+
+<section id="quick-start">
     <h2>Quick start</h2>
     <ol>
         <li>
@@ -75,6 +85,9 @@
     </ol>
     <p><strong>That's it!</strong> At this point, you should have a fully functional local copy of the program, complete with a fully built database, sample "seed" data (Users and Events), and all your front-end asset depndencies (jquery/bootstrap) compiled and minified for production.  You can now visit http://local.events.com (or whatever local domain you set up), sign up for events, and... well, please explore for yourself!</p>
 
+</section>
+<section id="homestead">
+
     <h3 id="homestead">Laravel Homestead Users</h3>
     <p>If you are using Laravel Homestead, just add the site and database to your <code>~/.homestead/Homestead.yaml</code> file like this:</p>
     <pre><code>
@@ -100,6 +113,8 @@
     gulp
     php artisan migrate --seed
         </code></pre>
+</section>
+<section id="database">
 
     <h2>About the Database, Migrations, and Test Data</h2>
     <h3>Database</h3>
@@ -187,11 +202,11 @@ EOT;
     <h3>Seed Data</h3>
     <p>If you run <code>php artisan db:seed</code>, or use the <code>--seed</code> option on the <code>php artisan migrate</code> command, your database will have been populated with <strong>generated</strong> test data, as defined in the <code>database/seeds</code> directory.</p>
     <p>Without using something like this, we have to mess with exporting/importing a schema or test database, or having to manually enter records in a bunch of different UI screens to set up a demo/test environment of the application (or to process/test changes).  This is cool, because it eliminates having to mess with any of that.  A huge time-saver!</p>
-    <h4>Code Example 1:</h4>
+    <h4>Example 1: Events</h4>
     <p>Here's an example from <code>database/seeds/EventsTableSeeder.php</code>:</p>
 
     <pre><code>//create 20 events
-            factory(App\Event::class,20)->create();</code></pre>
+factory(App\Event::class,20)->create();</code></pre>
 
     <p>Crazy simple, right?  The <code>factory()</code> method draws from <code>database/factories/ModelFactory.php</code>:</p>
     <?php
@@ -212,7 +227,7 @@ EOT;
     <p>Read more about the fantastic <a href="https://github.com/fzaninotto/Faker">fzaninotto/Faker</a> package.</p>
 
     <p>PS: We currently have the 'production' environment set up to refresh every time we push to the master branch.</p>
-    <h4>Code Example 2:</h4>
+    <h4>Example 2: Events to Users</h4>
     <p>This code is from <code>database/seeds/EventUserTableSeeder.php</code></p>
     <p>The FIRST user (that is, user_id #1) is assigned to ALL events, and the FIRST event (that is, event id #1) is assigned to ALL users.</p>
     <?php
@@ -256,8 +271,8 @@ EOT;
         <li><code>php artisan migrate --seed</code> <- run the seeder automatically after the migration</li>
         <li><code>php artisan migrate:refresh --seed</code> <- wipe everything clean, then migrate & reseed</li>
     </ul>
-
-
+</section>
+<section id="front-end-packages">
     <h2><span class="label label-success">BONUS!</span> bower, gulp, and elixr</h2>
     <p>Bower is package manager for front end packages.  In this case, we pull in bootstrap, jquery, and font-awesome with bower, use elixr to define how we want it compiled (via <code>gulpfile.js</code>), and then everything is compiled into a single, minified file by running <code>gulp</code>. (Well, two files: one for CSS and one for JS).</p>
     <p>This is great, becuase all we have to include in our <code>resources/views/layouts/master.blade.php</code> file are these compiled files:</p>
@@ -285,8 +300,10 @@ EOT;
     <p>PS: I regularly use <code>gulp watch</code> so when I make a change to a source file, it's automatically compiled and visible in the browser.</p>
 
     <p>This project does not have much in it's gulpfile, but some examples of the next things we might "mix in" could be js libraries, more custom fonts, custom icons, etc.</p>
+</section>
+<section id="laravel">
 
-    <h2><span class="label label-success">BONUS!</span> Advanced Laravel Usage</h2>
+    <h2><span class="label label-success">BONUS!</span> Dates: Future/Previous Events</h2>
     <p>Let's talk for a moment about one way to deal with how to deal with "Previous" vs. "Future" events.  This application uses a few laravel features to make it happen quickly, easily, and efficiently.</p>
 
     <h3>Query Scopes</h3>
@@ -336,21 +353,26 @@ public function futureEvents()
     WHERE user_id = 1
     AND events.date >= '2016-04-01'
 </code></pre>
+
+</section>
+<section id="performance">
+
+
     <h2><span class="label label-success">BONUS!</span> Performance</h2>
     <h3>Eager Loading of related models</h3>
     <p>Let's bring this home with one more example, building on what we have so far.  Let's say we wanted a list of users WITH their future events...</p>
     <p>Consider this code:</p>
-    <pre><code>$users = User::all();
-    foreach($users as $user){
-        $user->futureEvents()->get();
-    }</code></pre>
+<pre><code>$users = User::all();
+foreach($users as $user){
+    $user->futureEvents()->get();
+}</code></pre>
     <p>If you had 100 users, that code would run 100 queries, right? (Actually, 101).</p>
     <p>Well, here is a much more efficient way of doing it:</p>
-    <pre><code>$users = User::with('futureEvents')->get();
-    foreach($users as $user){
-        $events = $user->futureEvents;
-        //do something with the events
-    }
+<pre><code>$users = User::with('futureEvents')->get();
+foreach($users as $user){
+    $events = $user->futureEvents;
+    //do something with the events
+}
 </code></pre>
     <p>Our system only ran TWO queries. The results would include 100 users like this:</p>
     <?php
@@ -417,9 +439,15 @@ EOT;
     ?>
     <pre><code>{{$eot}}</code></pre>
     <p>Note the nested <code>event</code> data ONLY contains an <code>id</code>, rather than a 'full' object.</p>
-    <h2>Conclusion</h2>
-    <p>Obviously, we could manually write something like that in raw SQL, but in my opinion, this is a good example of the ORM doing a great deal of work for us, and producing code that not only gets the job done quickly, but is very easy to read, maintain, and extend later.</p>
+
+</section>
+<section id="final-thoughts">
+
+    <h2>Final Thoughts</h2>
+    <p>Well, I set out with the goal of quickly producing code that not only gets the job done, but is very easy to read, maintain, and extend later.</p>
     <p>I have more to say about Security, Design, Project Management, Requirements Analysis, and more... perhaps I will have a chance to add to this page one day, but I hope you can tell that I put some effort into it.</p>
     <p>Just in case, here's a  button leading to the solution: <a class="btn btn-lg btn-primary" href="/event/{{$next_event->id}}/register"><i class="fa fa-plus"></i> Sign Up for the next Event</a></p>
     <p>Thank you again for your time and consideration!</p>
+</section>
+
 @endsection

@@ -4,6 +4,23 @@
     <div class="content">
         <h1 class="title text-center">The Event Demo</h1>
 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">The Solution:</h3>
+            </div>
+
+            <div class="panel-body">
+                <p>Here is the <strong>next</strong>, upcoming event in the database.  Click the button to see the sign up form for this event.</p>
+                <?php $event = App\Event::future()->first() ?>
+                <h3 class="text-center">{{$event->title}}</h3>
+                <h4 class="text-center">{{$event->date->format('n/j/y')}}</h4>
+                <p class="text-center">
+                    <a class="btn btn-lg btn-primary" href="/event/{{$event->id}}/register"><i class="fa fa-plus"></i> Sign Up</a>
+                </p>
+            </div>
+        </div>
+
+
         <h2>Task:</h2>
         <p>Create a simple web form using PHP that allows a user to sign up for an event.</p>
         <ul>
@@ -44,24 +61,8 @@
             <li>An export of the database structure and data.</li>
         </ul>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">The Solution:</h3>
-            </div>
 
-            <div class="panel-body">
-                <p>Here is the <strong>next</strong>, upcoming event in the database.  Click the button to see the sign up form for this event.</p>
-                <?php $event = App\Event::future()->first() ?>
-                <h3 class="text-center">{{$event->title}}</h3>
-                <h4 class="text-center">{{$event->date->format('n/j/y')}}</h4>
-                <p class="text-center">
-                    <a class="btn btn-lg btn-primary" href="/event/{{$event->id}}/register"><i class="fa fa-plus"></i> Sign Up</a>
-                </p>
-            </div>
-
-        </div>
-
-        <p>PS: Please see the <a href="/about">about</a> page for installation instructions, development notes, code samples, and other thoughts on my overall approach to this and other projects.  Thank you!</p>
+        <p>PS: Please see the <a href="/docs">docs</a> page for installation instructions, development notes, code samples, and other thoughts on my overall approach to this project.  Thank you!</p>
 </div>
 
 @endsection

@@ -65,7 +65,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/about">about</a></li>
-                <li><a href="/docs">docs</a></li>
+                <li><a href="/docs">for developers</a></li>
             </ul>
         </div>
     </nav>

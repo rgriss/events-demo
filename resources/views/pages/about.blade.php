@@ -11,15 +11,15 @@
     <div class="page-header">
         <h1>About this site</h1>
     </div>
-    <div class="well">
+    <div class="">
         <p>To whom it may concern:</p>
         <p>This is a simple "event registration" website, built in my spare time over a few days, in early April 2016, as part of a job application process.  It's meant to demonstrate php, mysql, and other related skills, tools, concepts, and techniques.</p>
         <p>The core requirement was to <strong>"build a form that allows users to register for events"</strong>, but hopefully it's apparent that I tried to go above and beyond in many ways.  I put a good deal of extra effort into the front-end details, (and the 'documentation'), treating it as a complete "potentially shippable product", not "just a web form".</p>
         <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#goals" aria-expanded="false" aria-controls="goals">Read more about the project goals
             </button></p>
-        <div id="goals" class="collapse">
-            <p>There are endless individual points of interest and discussion in the code... I tried to use a variety of techniques throughout.</p>
-            <p>My goal was to demonstrate proficiency in:</p>
+        <div id="goals" class="collapse well">
+            <p>There are endless individual points of interest and discussion in the code... I tried to use a variety of programming and design skills throughout.</p>
+            <p>My goal was to demonstrate general proficiency in:</p>
             <ul>
                 <li>PHP</li>
                 <li>MYSQL</li>
@@ -34,18 +34,18 @@
                 <li>Responsive Design Principles</li>
                 <li>Good Coding Practices
                     <ul>
-                        <li>Consistent, logical model/variable names</li>
+                        <li>Consistent, simple logical model/variable/method names</li>
                         <li>"Practically DRY" (Please ask me for examples)</li>
                         <li>Simple, Restful approach to routing/URL structure</li>
                     </ul>
                 </li>
-                <li>Attention to detail (Please see <code>app.scss</code> and/or ask me about the navbar!)</li>
+                <li>Attention to detail (Please see <code>resources/assets/sass/main.scss</code> and/or ask me about the navbar!)</li>
             </ul>
-            <p>I will (ramble?) about some of these points below, but the work always speaks for itself... in any case, I look forward to discussing some of the details when the time is right.</p>
-            <hr>
+            <p>I will discuss some of these points on the <a href="/docs">docs</a> page, but the work always speaks for itself... in any case, I look forward to discussing some of the details when the time is right.</p>
+            <p>While the site is built with Laravel (v5.2) and Bootstrap (v3.3.6), I COULD have built something similar with a different framework, or without any framework.  However, there are several reasons I chose to do it this way...  Please just ask me if you have any questions in this regard.</p>
         </div>
 
-        <p>While the site is built with Laravel (v5.2) and Bootstrap (v3.3.6), I COULD have built something similar with a different framework, or without any framework.  However, there are several reasons I chose to do it this way...  Please just ask me if you have any questions in this regard.</p>
+
 
         <p>Anyway, I think the end result meets the requirements of "the assessment challenge", with a little sugar on top.</p>
         <p>I hope you like it! Thank you for the opportunity!</p>
