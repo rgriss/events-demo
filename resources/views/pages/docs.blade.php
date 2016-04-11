@@ -88,7 +88,7 @@
 </section>
 <section id="homestead">
 
-    <h3 id="homestead">Laravel Homestead Users</h3>
+    <h3>Laravel Homestead Users</h3>
     <p>If you are using Laravel Homestead, just add the site and database to your <code>~/.homestead/Homestead.yaml</code> file like this:</p>
     <pre><code>
     sites:
@@ -113,6 +113,7 @@
     gulp
     php artisan migrate --seed
         </code></pre>
+    <p>Note that you will need to run database-related commands (such as <code>migrate</code> and <code>db:seed</code>) from within the VM (login with <code>homestead ssh</code> first).</p>
 </section>
 <section id="database">
 
