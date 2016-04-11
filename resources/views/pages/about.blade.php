@@ -47,7 +47,7 @@
 
 
 
-        <p>Anyway, I think the end result meets the requirements of "the assessment challenge", with a little sugar on top.</p>
+        <p>I think the end result meets the requirements of "the assessment challenge", with a little sugar on top.</p>
         <p>I hope you like it! Thank you for the opportunity!</p>
         <p>Sincerely,</p>
         <p>Ryan Grissinger<br>

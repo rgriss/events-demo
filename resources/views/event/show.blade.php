@@ -5,7 +5,7 @@
     <div class="page-header">
         <a href="/event/{{$event->id}}/register" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Sign Up</a>
         <h1 class="event-title">{{$event->title}}</h1>
-        <p><strong>Event Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores explicabo fuga maiores quaerat quo sit. Dignissimos dolorem fuga impedit non quos, ut voluptate! Accusamus delectus doloremque expedita itaque labore nam necessitatibus, quas recusandae. Ab accusamus consequatur consequuntur cumque deleniti doloremque, eos exercitationem, laboriosam laborum mollitia, necessitatibus nisi numquam omnis.</p>
+        <p><strong>Event Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores explicabo fuga maiores quaerat quo sit. Dignissimos dolorem fuga impedit non quos, ut voluptate! Accusamus delectus doloremque expedita itaque labore nam necessitatibus, quas recusandae.</p>
         <h2 class="event-date"><small>{{$event->date->format('l, F jS, Y')}}</small></h2>
     </div>
 

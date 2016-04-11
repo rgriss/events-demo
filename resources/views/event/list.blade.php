@@ -2,11 +2,6 @@
    <p class="padding">There are no events.</p>
 @endif
 
-<style>
-.attendee-count{
-    font-size: 20px;
-}
-</style>
 <div class="event-list-container">
     @foreach($events as $event)
     <div class="event-list-row row">
@@ -27,8 +22,6 @@
                 @endif
             </div>
         </div>
-
-
     </div>
     @endforeach
 </div>

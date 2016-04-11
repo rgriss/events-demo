@@ -4,7 +4,7 @@
 
     <style>
         body{
-            min-height: 100%;
+            /*min-height: 100%;*/
             background: #000000 url(https://www1.lifestylecommunities.com/img/bg-noise-black.png) repeat !important;
         }
         .container{
@@ -67,7 +67,5 @@
         </form>
 
     </div>
-
-
 
 @endsection
