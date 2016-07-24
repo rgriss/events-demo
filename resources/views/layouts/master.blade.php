@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>LC Events - @yield('title')</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <title>Event Demo @yield('title')</title>
+    <link rel="shortcut icon" href="{{ asset('img/e-logo.png') }}">
     <link rel="stylesheet" href="/css/app.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,7 +36,7 @@
             </button>
 
             <a class="navbar-brand" href="/">
-                <img class="logo pull-left" src="https://www2.lifestylecommunities.com/img/lc-logo.png" alt="LC">Event Demo</a>
+                <img class="logo pull-left" src="/img/e-logo.png" alt="E">Event Demo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
