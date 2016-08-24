@@ -1,6 +1,13 @@
 
 # The Events System
-## Built for Lifestyle Communities
+
+[View Live Demo](https://event-demo.xyz/)
+
+## Installation
+
+Please visit https://event-demo.xyz/docs for thorough installation instructions.
+
+## About this Project
 
 Among other things, this sample application demonstrates proficiency in:
 
